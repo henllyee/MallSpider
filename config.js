@@ -11,7 +11,7 @@ module.exports={
     }],
     db_connect:'mongodb://127.0.0.1/mall',
     login:{
-        login_user:'',
+        login_url:'https://nid.naver.com/nidlogin.login',
         user_name:'',
         user_password:''
     }
