@@ -26,7 +26,10 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+<<<<<<< HEAD
 # WebStorm
 .idea
 #data
 .DS_Store
+=======
+>>>>>>> 70e169f60fa6a7509610708643ce7f44131fc4a2
