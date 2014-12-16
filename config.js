@@ -2,8 +2,17 @@
  * Created by HenryCui on 14-12-15.
  */
 module.exports={
-    inquire_list_url:'',
-    inquire_content_url:'',
-    resource_list_url:'',
-    resource_content_url:''
+   sites: [
+    {
+        site_name:'',
+        site_url:'',
+        list_url:'',
+        detail_url:''
+    }],
+    db_connect:'mongodb://127.0.0.1/mall',
+    login:{
+        login_user:'',
+        user_name:'',
+        user_password:''
+    }
 };
