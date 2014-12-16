@@ -1,0 +1,14 @@
+{
+  "name": "InMallSpider",
+  "version": "0.0.1",
+  "dependencies": {
+    "body-parser": "~1.8.1",
+    "cookie-parser": "~1.3.3",
+    "morgan": "~1.3.0",
+    "mongoose":"~3.8.17"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  }
+}
