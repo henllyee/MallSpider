@@ -9,6 +9,9 @@ mongoose.connect(config.db_connect,function(err){
        process.exit(1);
    }
 });
+
 require('./content');
+require('./temp');
 
 exports.Content = mongoose.model('content');
+exports.Temp = mongoose.model('temp');

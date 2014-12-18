@@ -10,6 +10,5 @@ exports.newAndSave=function(sourceSite,sourceSiteUrl,sourceUrl,contentType,conte
     object.source_url = sourceUrl;
     object.content_type = contentType;
     object.content_id = contentId;
-
     object.save(callback);
 };
