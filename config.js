@@ -4,10 +4,10 @@
 module.exports={
    sites: [
     {
-        site_name:'',
-        site_url:'',
-        list_url:'',
-        detail_url:''
+        site_name:'naver cafe oksteel require',
+        site_url:'http://cafe.naver.com/oksteel.cafe',
+        list_url:'http://cafe.naver.com/ArticleList.nhn?search.clubid=16997305&search.menuid=31&search.boardtype=L',
+        detail_url:'http://cafe.naver.com/oksteel'
     }],
     db_connect:'mongodb://127.0.0.1/mall',
     login:{

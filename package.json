@@ -7,7 +7,8 @@
     "morgan": "~1.3.0",
     "mongoose":"~3.8.17",
     "request":"*",
-    "Async":"*"
+    "Async":"*",
+    "cheerio":"*"
   },
   "devDependencies": {
     "mocha": "*",
