@@ -1,13 +1,8 @@
 /**
  * Created by hengliang.cui on 2014/12/18.
  */
-module.exports = RequestHelper;
 
-var RequestHelper = function(){
-
-};
-
-RequestHelper.makeReqHeader = function(){
+exports.makeReqHeader = function(){
     return {
         'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
         'Accept-Language':'zh-CN,zh;q=0.8',

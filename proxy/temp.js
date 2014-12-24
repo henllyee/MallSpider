@@ -5,7 +5,6 @@ var Temp = require('../model').Temp;
 var asnyc = require('async');
 
 exports.save = function(tempType,tempContent,site,callback){
-    //判断是否存在
     asnyc.waterfall([
         function(cb){
             findByTempType(tempType,site,function(err,data){

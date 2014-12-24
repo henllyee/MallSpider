@@ -9,6 +9,7 @@ var content = new Schema({
     source_url:{type:String},
     content_type:{type:String,default:'inquire'},
     content_id:{type:String},
+    title:{type:String},
     content:{type:String},
     publish_date:{type:Date},
     fetch_date:{type:Date,default:Date.now}
