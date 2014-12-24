@@ -21,26 +21,21 @@ exports.get=function(callback){
     },
     function(data,cb){
         var count=0;
-        for(var i=0;i<data.length;i++){
-            //抓取明细
-            fetchDetail(site.detail_url,data[i],(function(num){
-                //存储
-                return function(err,content){
-                    contentProxy.newAndSave(site.site_name,
-                        site.site_url,'','',
-                        data[num],
-                        content.content,
-                        content.title,
-                        content.date,
-                        function(error,result){
-                            if(err) cb(error);
-                            count=count+1;
-                            if(count==data.length) cb(null,true);
-                        });
-                };
+        async.forEach(data,function(item,callback){
+            fetchDetail(site.detail_url,item,function(err,content){
+                contentProxy.newAndSave(site.site_name,site.site_url,'','', item, content.content, content.title, content.date,
+                    function(error,result){
+                        callback(error);
+                    });
+            })
+        },function(err,result){
+            if(err) {
+                cb(err);
+                return;
+            }
+            cb(null,true);
+        })
 
-            })(i));
-        }
     }],function(err,result){
         callback(err,result);
     });
