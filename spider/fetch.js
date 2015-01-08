@@ -9,7 +9,6 @@ var cheerio = require('cheerio');
 var contentProxy = require('../proxy/content');
 var headers = helper.makeReqHeader();
 
-
 exports.get=function(callback){
     var site = config.sites[0];
     async.waterfall([
@@ -40,7 +39,6 @@ exports.get=function(callback){
         callback(err,result);
     });
 };
-
 /**
  * Help Methods
  */
@@ -69,14 +67,17 @@ function fetchList(url,callback){
 function fetchDetail(url,data,callback){
     var detailUrl = url+'&articleid='+data;
     request({
+        encoding: null,
         url:detailUrl,
         headers:headers
     },function(err,response,body){
+        var charset="EUC-KR";
         if(err){
             callback(err);
             return;
         }
-        var $ = cheerio.load(body);
+        var bodydata = require('iconv-lite').decode(body, charset).toString();
+        var $ = cheerio.load(bodydata);
         var content = {
             title:$('.tit-box span').text(),
             content:$('#tbody').text(),

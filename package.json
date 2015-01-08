@@ -8,7 +8,9 @@
     "mongoose":"~3.8.17",
     "request":"*",
     "Async":"*",
-    "cheerio":"*"
+    "cheerio":"*",
+    "iconv-lite":"*",
+    "zlib":"*"
   },
   "devDependencies": {
     "mocha": "*",

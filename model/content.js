@@ -12,6 +12,7 @@ var content = new Schema({
     title:{type:String},
     content:{type:String},
     publish_date:{type:Date},
-    fetch_date:{type:Date,default:Date.now}
+    fetch_date:{type:Date,default:Date.now},
+    isconvert:{type:Boolean,default:false}
 });
 mongoose.model('content',content);
