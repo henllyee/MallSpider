@@ -4,18 +4,20 @@
 
 var fetch = require('./spider/fetch');
 var config = require('./config');
+var moment = require('moment');
 
 setInterval(function(){
     fetch.get(function(err,result){
+
         if(err||(!result)){
-            console.log('抓取失败！%s',Date.now());
+            console.log('抓取失败！%s',moment(Date.now()).format('YYYY-MM-DD hh:ss:mm'));
         }
 
         if(result.result) {
-            console.log('抓取成功!本次抓取：%s条.  %s',result.count,Date.now());
+            console.log('抓取成功!本次抓取：%s条.  %s',result.count,moment(Date.now()).format('YYYY-MM-DD hh:ss:mm'));
         }
         else{
-            console.log('未抓取到数据！ %s',Date.now());
+            console.log('未抓取到数据！ %s',moment(Date.now()).format('YYYY-MM-DD hh:ss:mm'));
         }
 
     });

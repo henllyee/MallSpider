@@ -19,7 +19,6 @@ exports.get=function(callback){
         });
     },
     function(data,cb){
-        var count=0;
         if((!data)||data.length==0){
             cb(null,{result:false,count:0});
             return;
@@ -30,11 +29,14 @@ exports.get=function(callback){
                     function(error,result){
                         if(error) {
                             callback(error);
-                            return;
+                        }
+                        else{
+                            callback();
                         }
                     });
-            })
-        },function(err,result){
+            });
+        },function(err){
+
             if(err) {
                 cb(err);
                 return;

@@ -10,7 +10,6 @@
     "Async":"*",
     "cheerio":"*",
     "iconv-lite":"*",
-    "zlib":"*",
     "moment":"*"
   },
   "devDependencies": {
