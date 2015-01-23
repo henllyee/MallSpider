@@ -20,11 +20,18 @@ exports.get=function(callback){
     },
     function(data,cb){
         var count=0;
+        if((!data)||data.length==0){
+            cb(null,{result:false,count:0});
+            return;
+        }
         async.forEach(data,function(item,callback){
             fetchDetail(site.detail_url,item,function(err,content){
-                contentProxy.newAndSave(site.site_name,site.site_url,'','', item, content.content, content.title, content.date,
+                contentProxy.newAndSave(site.site_name,site.site_url,site.detail_url+'&articleid='+item,'', item, content.content, content.title, content.date,
                     function(error,result){
-                        callback(error);
+                        if(error) {
+                            callback(error);
+                            return;
+                        }
                     });
             })
         },function(err,result){
@@ -32,7 +39,7 @@ exports.get=function(callback){
                 cb(err);
                 return;
             }
-            cb(null,true);
+            cb(null,{result:true,count:data.length});
         })
 
     }],function(err,result){

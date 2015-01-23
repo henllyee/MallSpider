@@ -10,7 +10,8 @@
     "Async":"*",
     "cheerio":"*",
     "iconv-lite":"*",
-    "zlib":"*"
+    "zlib":"*",
+    "moment":"*"
   },
   "devDependencies": {
     "mocha": "*",

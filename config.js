@@ -10,6 +10,7 @@ module.exports={
         detail_url:'http://cafe.naver.com/ArticleRead.nhn?clubid=16997305'
     }],
     db_connect:'mongodb://127.0.0.1/mall',
+    interval_time:1000*3,
     login:{
         login_url:'https://nid.naver.com/nidlogin.login',
         user_name:'',
